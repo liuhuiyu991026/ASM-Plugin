@@ -99,7 +99,7 @@ protected void onCreate(Bundle savedInstanceState) {
 	...
 }
 ```
-## step 3. Mofidy Configurations
+## step 3. Modify Configurations
 First, you need to import this plugin to the project-level build.gradle like the following snippet.
 ``` gradle
 buildscript {
