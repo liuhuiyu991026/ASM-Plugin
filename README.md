@@ -89,7 +89,7 @@ dependencies {
 ```
 Don't forget to run Gradle Task **_UploadArchives_** to refresh your plugin.<br>
 <br>
-Second, add the package **_realtimecoverage_** to the source project of the app that needs to be instrumented, and preferably you can add it to **_app/src/main/java_**. Then find the Launch Activity of your app according to _AndroidMenifest.xml_, and insert some code into **_onCreate()_** method of your Launch Activity, e.g.:
+Second, add the package **_realtimecoverage_** to the source project of the app that needs to be instrumented, and preferably you can add it to **_app/src/main/java_**. Then find the Launch Activity of your app according to _AndroidMenifest.xml_, and insert some code into **_onCreate()_** method of your Launch Activity like the following snippet.
 ``` java
 protected void onCreate(Bundle savedInstanceState) {
 	// Initialize the blocking queue of Method-Call-Listener
