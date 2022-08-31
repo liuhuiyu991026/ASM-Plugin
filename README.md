@@ -11,7 +11,8 @@ In this step, we automatically instrument all methods included in the app source
 ## 2. Filter
 In this step, we extract the Event-Signature Set that can uniquely identify the excecuted UI events from the Log obtained in step 1. In Android, event handling function is implemented by Event Handlers. First, we use the ASM library to extract all the Event Handler Methods in Android SDK and Android-Support-Library, then by reading Log files obtained in step 1, we can get the call and return locations of all Event Handlers, we define the method call/return trace contained in the middle of method call and method return as the signature that uniquely identifies the event. For example, OnOptionsItemSelected() is a typical Event Handler method. If an event e1 is a select options item event, its method call chain is like:
 <div align='center'>
-call OnOptionsItemSelected( )-->call m1( )-->call m2( )-->return m2( )-->return m1( )-->return OnOptionsItemSelected( )
+call OnOptionsItemSelected( )-->call m1( )-->call m2( )--><br>
+return m2( )-->return m1( )-->return OnOptionsItemSelected( )
 </div>
 <br>
 Then in our method, the above chain is the signature that can uniquely identify the event e1.
