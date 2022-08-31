@@ -3,7 +3,7 @@
 # Introduction to AsmPlugin — Our Automated-Instrumentation-Tool
 ASM is an all purpose Java bytecode manipulation and analysis framework. It can be used to modify existing classes or to dynamically generate classes, directly in binary form. In this work, we use Gradle Transformer and ASM to automatically instrument apps at the event handlers to uniquely log executed UI events，where the apps used come from THEMIS, the representative benchmark with diverse types of real-world bugs for Android. Fig. 1 shows AsmPlugin's workflow.
 
-![Fig 1](https://raw.githubusercontent.com/liuhuiyu991026/Resource/master/images/Fig1.png?token=GHSAT0AAAAAABXWAUTWUNQGPAITP3GEUTLWYYPHU3A)
+![Fig 1](https://github.com/liuhuiyu991026/Resource/blob/master/images/Fig1.png)
 
 ## 1. Full instrument and Log
 In this step, we automatically instrument all methods included in the app source code. First, we get .class files through Gradle Transformer and our custom Gradle plugin, then we use ASM library to traverse all .class files and insert custom functions in the first and last lines of each method, where the custom functions can push method calls and returns into thread-safety BlockingQueue to ensure that the obtained Log is strictly in chronological order. Finally, the call and return trace Log of each method in the bug retriggering trace can be obtained by running the instrumented apk.
