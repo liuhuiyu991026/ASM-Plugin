@@ -38,10 +38,8 @@ AsmPlugin
 │      └─main
 │          │  
 │          └─java
-│              ├─com
-│              │  └─gavin
-│              │      └─asmdemo
-│              │              MainActivity.java
+│              ├─com.gavin.asmdemo
+│              │       MainActivity.java:	launcher Activity of this app
 │              │              ...
 │              │              
 │              └─realtimecoverage
